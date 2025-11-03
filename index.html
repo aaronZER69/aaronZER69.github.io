@@ -4,206 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portfolio - Aaron</title>
-    <link rel="icon" type="image/x-icon" href="chine.png">
-    <script src = "index.js" defer></script> 
-    <link rel ='stylesheet' href="index.css"></style>
+    <link rel="icon" type="image/x-icon" href="/img/chine.png">
+    <script src="index.js" defer></script>
+    <link rel='stylesheet' href="index.css">
 </head>
+<body>
+    <header>
+        <h1 class="home_name">Aaron Zerrouk</h1>
+        <h2 class="homme_theme">BTS SIO - Portfolio</h2>
+        <h3 class="home__education">Développeur web</h3>
+    </header>
 
-                <h1 class="home_name">Aaron Zerrouk</h1>
-                <h2 class="homme_theme"> BTS1 SIO - Portfolio</h2>
-                <h3 class="home__education">Développeur web</h3>
-
-    </nav>
-</header>
-
-<main class="main">
-
-    <section class="home section" id="home">
-        <div class="home__container container grid">
-                
+    <main class="main">
+        <section class="home section" id="home">
+            <div class="home__container container grid">
                 <div class="home__buttons">
                     <a href="#about" class="button">A propos de moi</a>
-                </a>
-                <a href="#projets" class="button">Projets</a>
-            </a>
-            <a href="#contact" class="button">Contact</a>
+                    <a href="#projets" class="button">Projets</a>
+                    <a href="#contact" class="button">Contact</a>
+                </div>
             </div>
-            <div>
-            <img class="home_img" scr="bckg.jpg" alt=""><img>
-            </div>
-    </section>
+        </section>
 
-
-    <section class="about section" id="about">
-
-        <h2 class="section__title">A propos de moi</h2>
-        <div class="about__container container grid">
-
-            <div class="about__data">
+        <section class="about section" id="about">
+            <h2 class="section__title">A propos de moi</h2>
+            <div class="about__container container grid">
                 <div class="about__info">
-
                     <div class="about__box">
                         <h3 class="about__title">Calme</h3>
-                        <span class="about__subtitle"></span>
                     </div>
-
                     <div class="about__box">
                         <h3 class="about__title">Capacité d’adaptation</h3>
-                        <span class="about__subtitle"></span>
                     </div>
-
                     <div class="about__box">
                         <h3 class="about__title">Autonome</h3>
-                        <span class="about__subtitle"></span>
                     </div>
                 </div>
-
                 <p class="about__description">
-                Actuellement en BTS 1 SIO à 19 ans, je recherche des perspectives d'avenir dans le milieu du développement web. 
-                Grace aux cours suivi au long de l'année, j'ai pu acquérir les bases de plusieurs langages Web (HTML,CSS,Javascript,PHP).
+                    Actuellement en BTS 1 SIO, je recherche des perspectives d'avenir dans le milieu du développement web. 
+                    Grâce aux cours suivis au long de l'année, j'ai pu acquérir les bases de plusieurs langages Web (HTML, CSS, JavaScript, PHP).
+                    <br> **Note importante :** Ce site est un projet en cours de développement. Certaines fonctionnalités pourraient ne pas encore fonctionner correctement ou être finalisées. Merci pour votre compréhension ! 😊 </br>
                 </p>
-
-                <h2 class="section__title">Mes Projets - Portfolio</h2>
             </div>
-        </div>
-    </section>
-    <section class="about section" id="projets">
+        </section>
 
-    <section class="skills section" id="skills">
-        
-        <h2 class="section__title">Mes compétences</h2>
-
-        <div class="skills__container container grid">
-            <div class="skills__content">
-                <h3 class="skills__title">Développement Web</h3>
-
-                <div class="skills__box">
-                    <div class="skills__group">
-
-                        <div class="skills_data">
-                            
-
-                            <div>
-                                <h3 class="skills__name">HTML</h3>
-                                <span class="skills__level">Les bases</span>
-                            </div>
-                        </div>
-
-                        <div class="skills_data">
-                            
-
-                            <div>
-                                <h3 class="skills__name">CSS</h3>
-                                <span class="skills__level">Les bases</span>
-                            </div>
-                        </div>
-
-                        <div class="skills_data">
-                            
-
-                            <div>
-                                <h3 class="skills__name">Javascript</h3>
-                                <span class="skills__level">Les bases</span>
-                            </div>
-                        </div>
-
+        <section class="projects section" id="projets">
+            <h2 class="section__title">Mes Projets - Portfolio</h2>
+            <div class="carousel">
+                <div class="carousel__slides">
+                    <div class="carousel__slide active">
+                        <h3 class="carousel__title">Projet 1 - Site sur le groupe de J-Pop, YOASOBI</h3>
+                        <img src="/img/grp.jpg" alt="Projet 1">
                     </div>
-
-                    <div class="skills__group">
-
-                        <div class="skills_data">
-                         
-
-                            <div>
-                                <h3 class="skills__name">SQL</h3>
-                                <span class="skills__level">Les bases</span>
-                            </div>
-                        </div>
-
-                        <div class="skills_data">
-                           
-
-                            <div>
-                                <h3 class="skills__name">PHP</h3>
-                                <span class="skills__level">Les bases</span>
-                            </div>
-                        </div>
-                        
+                    <div class="carousel__slide">
+                        <h3 class="carousel__title">Projet 2 - Gestion d'un parc informatique</h3>
+                        <img src="/img/glpi.jpg" alt="Projet 2">
+                    </div>
+                    <div class="carousel__slide">
+                        <h3 class="carousel__title">Projet 3 - Exercices en JavaScript</h3>
+                        <img src="/img/jss.jpg" alt="Projet 3">
                     </div>
                 </div>
+                <button class="carousel__button prev">❮</button>
+                <button class="carousel__button next">❯</button>
             </div>
+        </section>
 
-    <section class="services section">
-     
-        <h2 class="section__title title2" data-filter=".formations">Formations</h2>
-            <div class="services__card mix formations">
-                <h3 class="services__title">Bac technologique<br>STI2D</h3>
-                <span class="services_subbtitle">Lycée Jacob Holtzer, Firminy</span>
-
-               
-            
-        </div>
-    </section>
-
-    <section class="contact section" id="contact">
-        <h2 class="section__title">Contactez Moi</h2>
-
-        <div class="contact__container container grid">
-
-            <div class="contact__content">
-
-                <div class="contact__info">
-                    <div class="contact__card">
-                        <h3 class="contact__card-title">Email</h3>
-                        <span class="contact__card-data"></span>
-                        <a href="mailto:aaron.zerrouk96@gmail.com" class="contact__button">envoyer un mail</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact__content">
-                <h3 class="contact__title">Envoyez moi un message pour en savoir plus !</h3>
-
-                <form id="form">
-                    <label for="nomform" id="contactnom">Nom</label>
-                    <input name="nom" id="nomform" type="text" placeholder="Votre nom" required="">
-                    
-                    <label >Mail<input name="mail" type="email" placeholder="Votre mail" id="contact__form-input" required="">
-                    
-                   
-                        <label for="textarea1"id="contactmsg">Message</label>
-                        <textarea name="commentaire" id="form" cols="30" rows="10" placeholder="Votre message" class="contact__form-input" required=""></textarea>
-                   
-
-                    <input type="submit" id="button_contact" class="button form-control submit" value="Envoyer">
-                </form>
-            </div>
-
-        </div>
-
-    </section>
-
-    
-
-</main>
-
-    <div class="footer__container container">
-        <h1 class="footer__title">par Aaron.</h1>
-
-        <ul class="footer__list">
-            <li>
-                <a href="#about" class="footer__link">A propos</a>
-            </li>
-
-        </ul>
-
+        <section class="skills section" id="skills">
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <h2 class="skills_title">Mes Compétences</h2>
+                        <ul class="submenu">
+                            <li class="menuitem">HTML</li>
+                            <li class="menuitem">JavaScript</li>
+                            <li class="menuitem">Linux</li>
+                            <li class="menuitem">CSS</li>
+                            <li class="menuitem">MySQL</li>
+                            <li class="menuitem">PHP</li>
+                            <li class="menuitem">Git</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </section>
         
 
-        <span class="footer__copy">
-            
-        </span>
-    </div>
+        <section class="contact section" id="contact">
+            <h2 class="section__title">Contactez Moi</h2>
+            <div class="contact__container container grid">
+                <div class="contact__content">
+                    <div class="contact__info">
+                        <div class="contact__card">
+                            <h3 class="contact__card-title">Email</h3>
+                            <a href="mailto:aaron.zerrouk96@gmail.com" class="contact__button">Envoyer un mail</a>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="contact__content">
+                    <h3 class="contact__title">Envoyez-moi un message pour en savoir plus !</h3>
+                    <form id="form" action="https://formspree.io/f/mqapevrv" method="post">
+                        <input name="nom" id="nomform" type="text" placeholder="Votre nom" required>
+                        <input name="mail" id="email" type="email" placeholder="Votre Email" required>
+                        <textarea name="commentaire" id="commentaire" cols="30" rows="10" placeholder="Votre message" class="contact__form-input" required></textarea>
+                        <input type="submit" id="button" class="button" value="Envoyer">
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h1 class="footer__title">Par Aaron.</h1>
+    </footer>
+</body>
 </html>
-
-
