@@ -3,120 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfolio - Aaron</title>
-    <link rel="icon" type="image/x-icon" href="/img/chine.png">
-    <script src="index.js" defer></script>
-    <link rel='stylesheet' href="index.css">
+    <title>Aaron Zerrouk — Portfolio</title>
+    <link rel="icon" type="image/png" href="img/chine.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
-        <h1 class="home_name">Aaron Zerrouk</h1>
-        <h2 class="homme_theme">BTS SIO - Portfolio</h2>
-        <h3 class="home__education">Développeur web</h3>
-    </header>
 
-    <main class="main">
-        <section class="home section" id="home">
-            <div class="home__container container grid">
-                <div class="home__buttons">
-                    <a href="#about" class="button">A propos de moi</a>
-                    <a href="#projets" class="button">Projets</a>
-                    <a href="#contact" class="button">Contact</a>
-                </div>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo">AZ<span>.</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link">À propos</a></li>
+                <li><a href="#projets" class="nav-link">Projets</a></li>
+                <li><a href="#skills" class="nav-link">Compétences</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-orb orb-1"></div>
+            <div class="hero-orb orb-2"></div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-eyebrow"><span class="dot"></span>Disponible pour alternance</p>
+            <h1 class="hero-name">Aaron<br><em>Zerrouk</em></h1>
+            <p class="hero-subtitle">BTS SIO · Développeur Web</p>
+            <p class="hero-desc">Étudiant passionné par le développement web, je maîtrise HTML, CSS, JavaScript et PHP. À la recherche d'une opportunité pour mettre mes compétences en pratique.</p>
+            <div class="hero-cta">
+                <a href="#projets" class="btn btn-primary">Voir mes projets</a>
+                <a href="#contact" class="btn btn-ghost">Me contacter</a>
             </div>
-        </section>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
 
-        <section class="about section" id="about">
-            <h2 class="section__title">A propos de moi</h2>
-            <div class="about__container container grid">
-                <div class="about__info">
-                    <div class="about__box">
-                        <h3 class="about__title">Calme</h3>
+    <main>
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section-label">01 — À propos</div>
+                <h2 class="section-title">Qui suis-je ?</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Actuellement en <strong>BTS 1 SIO</strong>, je me spécialise dans le développement web avec une vraie passion pour créer des expériences digitales élégantes et fonctionnelles.</p>
+                        <p>Au fil de ma formation, j'ai acquis les bases solides de plusieurs langages et technologies web, et je continue à apprendre chaque jour.</p>
                     </div>
-                    <div class="about__box">
-                        <h3 class="about__title">Capacité d’adaptation</h3>
-                    </div>
-                    <div class="about__box">
-                        <h3 class="about__title">Autonome</h3>
-                    </div>
-                </div>
-                <p class="about__description">
-                    Actuellement en BTS 1 SIO, je recherche des perspectives d'avenir dans le milieu du développement web. 
-                    Grâce aux cours suivis au long de l'année, j'ai pu acquérir les bases de plusieurs langages Web (HTML, CSS, JavaScript, PHP).
-                    <br> **Note importante :** Ce site est un projet en cours de développement. Certaines fonctionnalités pourraient ne pas encore fonctionner correctement ou être finalisées. Merci pour votre compréhension ! 😊 </br>
-                </p>
-            </div>
-        </section>
-
-        <section class="projects section" id="projets">
-            <h2 class="section__title">Mes Projets - Portfolio</h2>
-            <div class="carousel">
-                <div class="carousel__slides">
-                    <div class="carousel__slide active">
-                        <h3 class="carousel__title">Projet 1 - Site sur le groupe de J-Pop, YOASOBI</h3>
-                        <img src="/img/grp.jpg" alt="Projet 1">
-                    </div>
-                    <div class="carousel__slide">
-                        <h3 class="carousel__title">Projet 2 - Gestion d'un parc informatique</h3>
-                        <img src="/img/glpi.jpg" alt="Projet 2">
-                    </div>
-                    <div class="carousel__slide">
-                        <h3 class="carousel__title">Projet 3 - Exercices en JavaScript</h3>
-                        <img src="/img/jss.jpg" alt="Projet 3">
-                    </div>
-                </div>
-                <button class="carousel__button prev">❮</button>
-                <button class="carousel__button next">❯</button>
-            </div>
-        </section>
-
-        <section class="skills section" id="skills">
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <h2 class="skills_title">Mes Compétences</h2>
-                        <ul class="submenu">
-                            <li class="menuitem">HTML</li>
-                            <li class="menuitem">JavaScript</li>
-                            <li class="menuitem">Linux</li>
-                            <li class="menuitem">CSS</li>
-                            <li class="menuitem">MySQL</li>
-                            <li class="menuitem">PHP</li>
-                            <li class="menuitem">Git</li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </section>
-        
-
-        <section class="contact section" id="contact">
-            <h2 class="section__title">Contactez Moi</h2>
-            <div class="contact__container container grid">
-                <div class="contact__content">
-                    <div class="contact__info">
-                        <div class="contact__card">
-                            <h3 class="contact__card-title">Email</h3>
-                            <a href="mailto:aaron.zerrouk96@gmail.com" class="contact__button">Envoyer un mail</a>
+                    <div class="about-traits">
+                        <div class="trait-card">
+                            <div class="trait-icon">🧘</div>
+                            <h3>Calme</h3>
+                            <p>Résilience face aux défis techniques</p>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-icon">⚡</div>
+                            <h3>Adaptable</h3>
+                            <p>Capacité à m'intégrer dans tout environnement</p>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-icon">🎯</div>
+                            <h3>Autonome</h3>
+                            <p>Proactif et orienté résultats</p>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="contact__content">
-                    <h3 class="contact__title">Envoyez-moi un message pour en savoir plus !</h3>
-                    <form id="form" action="https://formspree.io/f/mqapevrv" method="post">
-                        <input name="nom" id="nomform" type="text" placeholder="Votre nom" required>
-                        <input name="mail" id="email" type="email" placeholder="Votre Email" required>
-                        <textarea name="commentaire" id="commentaire" cols="30" rows="10" placeholder="Votre message" class="contact__form-input" required></textarea>
-                        <input type="submit" id="button" class="button" value="Envoyer">
+        <section class="section section-dark" id="projets">
+            <div class="container">
+                <div class="section-label">02 — Projets</div>
+                <h2 class="section-title">Mes réalisations</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-img-wrap">
+                            <img src="img/grp.jpg" alt="Site YOASOBI" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="project-tag">HTML · CSS · JS</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-number">01</span>
+                            <h3>Site J-Pop — YOASOBI</h3>
+                            <p>Site vitrine dédié au groupe de J-Pop YOASOBI, avec présentation des membres et de la discographie.</p>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-img-wrap">
+                            <img src="img/glpi.jpg" alt="Gestion parc informatique" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="project-tag">GLPI · Réseau</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-number">02</span>
+                            <h3>Gestion de parc informatique</h3>
+                            <p>Administration d'un parc informatique via GLPI : inventaire, tickets et suivi des équipements.</p>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-img-wrap">
+                            <img src="img/jss.jpg" alt="Exercices JavaScript" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="project-tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-number">03</span>
+                            <h3>Exercices JavaScript</h3>
+                            <p>Collection d'exercices pratiques en JavaScript pour maîtriser les fondamentaux du langage.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="skills">
+            <div class="container">
+                <div class="section-label">03 — Compétences</div>
+                <h2 class="section-title">Mon stack technique</h2>
+                <div class="skills-grid">
+                    <div class="skill-item" style="--i:0"><span class="skill-name">HTML5</span><div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div><span class="skill-pct">90%</span></div>
+                    <div class="skill-item" style="--i:1"><span class="skill-name">CSS3</span><div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div><span class="skill-pct">85%</span></div>
+                    <div class="skill-item" style="--i:2"><span class="skill-name">JavaScript</span><div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div><span class="skill-pct">75%</span></div>
+                    <div class="skill-item" style="--i:3"><span class="skill-name">PHP</span><div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div><span class="skill-pct">70%</span></div>
+                    <div class="skill-item" style="--i:4"><span class="skill-name">MySQL</span><div class="skill-bar"><div class="skill-fill" style="--w:65%"></div></div><span class="skill-pct">65%</span></div>
+                    <div class="skill-item" style="--i:5"><span class="skill-name">Git</span><div class="skill-bar"><div class="skill-fill" style="--w:72%"></div></div><span class="skill-pct">72%</span></div>
+                    <div class="skill-item" style="--i:6"><span class="skill-name">Linux</span><div class="skill-bar"><div class="skill-fill" style="--w:68%"></div></div><span class="skill-pct">68%</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-dark" id="contact">
+            <div class="container">
+                <div class="section-label">04 — Contact</div>
+                <h2 class="section-title">Travaillons ensemble</h2>
+                <div class="contact-layout">
+                    <div class="contact-info">
+                        <p class="contact-intro">Vous avez un projet, une opportunité d'alternance ou simplement envie d'échanger ? Je suis disponible !</p>
+                        <div class="contact-card">
+                            <div class="contact-card-icon">✉️</div>
+                            <div>
+                                <p class="contact-card-label">Email direct</p>
+                                <a href="mailto:aaron.zerrouk96@gmail.com" class="contact-email">aaron.zerrouk96@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="form" class="contact-form" action="https://formspree.io/f/mqapevrv" method="post" novalidate>
+                        <div class="form-group">
+                            <label for="nomform">Votre nom</label>
+                            <input type="text" id="nomform" name="nom" placeholder="Jean Dupont" required autocomplete="name">
+                            <span class="form-error" id="err-nom"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Votre email</label>
+                            <input type="email" id="email" name="mail" placeholder="jean@email.com" required autocomplete="email">
+                            <span class="form-error" id="err-email"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="commentaire">Votre message</label>
+                            <textarea id="commentaire" name="commentaire" rows="5" placeholder="Bonjour Aaron..." required></textarea>
+                            <span class="form-error" id="err-msg"></span>
+                        </div>
+                        <button type="submit" id="button" class="btn btn-primary btn-full">
+                            <span class="btn-text">Envoyer le message</span>
+                            <span class="btn-icon">→</span>
+                        </button>
+                        <div class="form-success" id="formSuccess">
+                            ✓ Message envoyé avec succès !
+                        </div>
                     </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <h1 class="footer__title">Par Aaron.</h1>
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-name">Aaron Zerrouk</p>
+            <p class="footer-copy">© 2024 — Fait avec ❤️ et du café</p>
+        </div>
     </footer>
+
+    <script src="index.js"></script>
 </body>
 </html>
