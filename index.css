@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,700&display=swap');
 
 :root {
     --accent: #4f8eff;
@@ -9,8 +9,8 @@
     --text: #e4e6f4;
     --text-muted: #6b6d8a;
     --border: rgba(255,255,255,0.07);
-    --font-display: 'Syne', sans-serif;
-    --font-body: 'DM Sans', sans-serif;
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
     --nav-h: 72px;
     --radius: 16px;
     --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);

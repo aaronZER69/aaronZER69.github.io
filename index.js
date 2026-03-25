@@ -39,10 +39,19 @@ const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            skillObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-skillItems.forEach(item => skillObserver.observe(item));
+}, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
+skillItems.forEach(item => {
+    // If already in viewport on load, trigger immediately
+    const rect = item.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+        item.classList.add('visible');
+    } else {
+        skillObserver.observe(item);
+    }
+});
 
 // ---- CONTACT FORM: validation + Formspree submission ----
 const form = document.getElementById('form');
