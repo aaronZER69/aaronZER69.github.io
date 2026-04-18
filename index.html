@@ -129,6 +129,19 @@
                             <p>Plateforme de vente en ligne d'huiles de qualité avec catalogue complet, panier et système de paiement.</p>
                         </div>
                     </article>
+                    <article class="project-card project-card-clickable" id="confProject">
+                        <div class="project-img-wrap">
+                            <img src="cards/pl.png" alt="Configurateur de plaque plexiglass" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="project-tag">Vue.js · WebGL · Canvas</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <span class="project-number">04</span>
+                            <h3>Configurateur Plexiglass</h3>
+                            <p>Outil interactif pour configurer des plaques de plexiglass en temps réel avec formes variables, dimensions, trous et découpes.</p>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -426,6 +439,54 @@
 
                 <div class="modal-section">
                     <a href="https://github.com/aaronZER69/huiles" target="_blank" rel="noopener noreferrer" class="btn btn-source">
+                        <span>Code Source</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-1.02-2.44c3.33-.37 6.83-1.66 6.83-7.49 0-1.66-.6-3.08-1.58-4.17.15-.4.6-2.04-.15-4.21-1.3-.42-4.3 1.65-4.3 1.65-1.24-.35-2.56-.54-3.87-.54-1.31 0-2.63.19-3.87.54 0 0-3-2.07-4.3-1.65-.75 2.17-.3 3.81-.15 4.21-.98 1.09-1.58 2.51-1.58 4.17 0 5.84 3.5 7.12 6.83 7.49-.42.37-.8.89-.93 1.72-.84.37-2.96 1.03-4.27-1.23-1.3-2.27-3.67-2.4-3.67-2.4-2.34-.01-.16 1.47-.16 1.47 1.55.92 2.65 4.46 2.65 4.46 1.4 4.41 8.04 2.95 8.04 2.95v3.87"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALE CONFIGURATEUR -->
+    <div id="confModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="confModalClose">&times;</button>
+            <div class="modal-header">
+                <h2>Configurateur Plexiglass</h2>
+                <span class="modal-tag">Vue.js · WebGL · Canvas</span>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3>Contexte du projet</h3>
+                    <p>Ce projet consistait à développer un outil de configuration en temps réel pour les plaques de plexiglass. L'objectif était de permettre aux utilisateurs de personnaliser complètement leurs plaques en sélectionnant différentes formes, en modifiant les dimensions, en ajoutant des trous et en effectuant des découpes intérieures, avec un aperçu 3D/2D instantané.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Solutions utilisées</h3>
+                    <ul class="solutions-list">
+                        <li><strong>Vue.js</strong> — Framework pour l'interface utilisateur réactive</li>
+                        <li><strong>Canvas & WebGL</strong> — Rendu 2D/3D pour la prévisualisation</li>
+                        <li><strong>Formes variables</strong> — Rectangle, Cercle, Étoile, Diamant et autres</li>
+                        <li><strong>Modificateurs</strong> — Dimensions, trous, découpes intérieures</li>
+                        <li><strong>Export & Configuration</strong> — Sauvegarde des configurations en temps réel</li>
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Captures d'écran</h3>
+                    <div class="modal-gallery">
+                        <figure class="gallery-item">
+                            <img class="gallery-img" src="cards/conf.png" alt="Configurateur Plexiglass - Interface" loading="lazy">
+                            <figcaption>Interface de configuration</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <a href="https://github.com/aaronZER69/vueconf" target="_blank" rel="noopener noreferrer" class="btn btn-source">
                         <span>Code Source</span>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-1.02-2.44c3.33-.37 6.83-1.66 6.83-7.49 0-1.66-.6-3.08-1.58-4.17.15-.4.6-2.04-.15-4.21-1.3-.42-4.3 1.65-4.3 1.65-1.24-.35-2.56-.54-3.87-.54-1.31 0-2.63.19-3.87.54 0 0-3-2.07-4.3-1.65-.75 2.17-.3 3.81-.15 4.21-.98 1.09-1.58 2.51-1.58 4.17 0 5.84 3.5 7.12 6.83 7.49-.42.37-.8.89-.93 1.72-.84.37-2.96 1.03-4.27-1.23-1.3-2.27-3.67-2.4-3.67-2.4-2.34-.01-.16 1.47-.16 1.47 1.55.92 2.65 4.46 2.65 4.46 1.4 4.41 8.04 2.95 8.04 2.95v3.87"/>

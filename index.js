@@ -332,6 +332,28 @@ oilModal.addEventListener('click', (e) => {
     }
 });
 
+// ---- MODAL: CONFIGURATEUR PROJECT ----
+const confProject = document.getElementById('confProject');
+const confModal = document.getElementById('confModal');
+const confModalClose = document.getElementById('confModalClose');
+
+confProject.addEventListener('click', () => {
+    confModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+confModalClose.addEventListener('click', () => {
+    confModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+});
+
+confModal.addEventListener('click', (e) => {
+    if (e.target === confModal) {
+        confModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
 // ---- LIGHTBOX: GALLERY IMAGES ----
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
