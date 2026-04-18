@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <!-- ANIMATED STARFIELD BACKGROUND -->
+    <div id="starfield" class="starfield"></div>
+    
+    <!-- CURSOR FOLLOWER -->
+    <div id="cursorFollower" class="cursor-follower"></div>
+    <div id="cursorDot" class="cursor-dot"></div>
 
     <nav class="navbar" id="navbar">
         <div class="nav-inner">
@@ -19,6 +25,7 @@
                 <li><a href="#about" class="nav-link">À propos</a></li>
                 <li><a href="#projets" class="nav-link">Projets</a></li>
                 <li><a href="#skills" class="nav-link">Compétences</a></li>
+                <li><a href="#langues" class="nav-link">Langues</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -33,7 +40,7 @@
             <div class="hero-orb orb-2"></div>
         </div>
         <div class="hero-content">
-            <p class="hero-eyebrow"><span class="dot"></span>Disponible pour alternance</p>
+            <p class="hero-eyebrow"><span class="dot"></span>BTS SIO 2 SLAM - Candidature pour License</p>
             <h1 class="hero-name">Aaron<br><em>Zerrouk</em></h1>
             <p class="hero-subtitle">BTS SIO · Développeur Web</p>
             <p class="hero-desc">Étudiant passionné par le développement web, je maîtrise HTML, CSS, JavaScript et PHP. À la recherche d'une opportunité pour mettre mes compétences en pratique.</p>
@@ -83,7 +90,7 @@
                 <div class="section-label">02 — Projets</div>
                 <h2 class="section-title">Mes réalisations</h2>
                 <div class="projects-grid">
-                    <article class="project-card">
+                    <article class="project-card project-card-clickable" id="yoaProject">
                         <div class="project-img-wrap">
                             <img src="img/grp.jpg" alt="Site YOASOBI" loading="lazy">
                             <div class="project-overlay">
@@ -96,7 +103,7 @@
                             <p>Site vitrine dédié au groupe de J-Pop YOASOBI, avec présentation des membres et de la discographie.</p>
                         </div>
                     </article>
-                    <article class="project-card">
+                    <article class="project-card project-card-clickable" id="glpiProject">
                         <div class="project-img-wrap">
                             <img src="img/glpi.jpg" alt="Gestion parc informatique" loading="lazy">
                             <div class="project-overlay">
@@ -109,17 +116,17 @@
                             <p>Administration d'un parc informatique via GLPI : inventaire, tickets et suivi des équipements.</p>
                         </div>
                     </article>
-                    <article class="project-card">
+                    <article class="project-card project-card-clickable" id="oilProject">
                         <div class="project-img-wrap">
-                            <img src="img/jss.jpg" alt="Exercices JavaScript" loading="lazy">
+                            <img src="oil/olive.png" alt="Site ecommerce huiles" loading="lazy">
                             <div class="project-overlay">
-                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">React · Tailwind · Node.js</span>
                             </div>
                         </div>
                         <div class="project-body">
                             <span class="project-number">03</span>
-                            <h3>Exercices JavaScript</h3>
-                            <p>Collection d'exercices pratiques en JavaScript pour maîtriser les fondamentaux du langage.</p>
+                            <h3>Site E-Commerce — Huiles</h3>
+                            <p>Plateforme de vente en ligne d'huiles de qualité avec catalogue complet, panier et système de paiement.</p>
                         </div>
                     </article>
                 </div>
@@ -130,21 +137,91 @@
             <div class="container">
                 <div class="section-label">03 — Compétences</div>
                 <h2 class="section-title">Mon stack technique</h2>
-                <div class="skills-grid">
-                    <div class="skill-item" style="--i:0"><span class="skill-name">HTML5</span><div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div><span class="skill-pct">90%</span></div>
-                    <div class="skill-item" style="--i:1"><span class="skill-name">CSS3</span><div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div><span class="skill-pct">85%</span></div>
-                    <div class="skill-item" style="--i:2"><span class="skill-name">JavaScript</span><div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div><span class="skill-pct">75%</span></div>
-                    <div class="skill-item" style="--i:3"><span class="skill-name">PHP</span><div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div><span class="skill-pct">70%</span></div>
-                    <div class="skill-item" style="--i:4"><span class="skill-name">MySQL</span><div class="skill-bar"><div class="skill-fill" style="--w:65%"></div></div><span class="skill-pct">65%</span></div>
-                    <div class="skill-item" style="--i:5"><span class="skill-name">Git</span><div class="skill-bar"><div class="skill-fill" style="--w:72%"></div></div><span class="skill-pct">72%</span></div>
-                    <div class="skill-item" style="--i:6"><span class="skill-name">Linux</span><div class="skill-bar"><div class="skill-fill" style="--w:68%"></div></div><span class="skill-pct">68%</span></div>
+                
+                <!-- LANGUAGES -->
+                <div class="stack-category">
+                    <h3 class="stack-category-title">Languages</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" style="--i:0"><span class="skill-name">HTML</span><div class="skill-bar"><div class="skill-fill" style="--w:95%"></div></div><span class="skill-pct">95%</span></div>
+                        <div class="skill-item" style="--i:1"><span class="skill-name">CSS</span><div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div><span class="skill-pct">88%</span></div>
+                        <div class="skill-item" style="--i:2"><span class="skill-name">JavaScript</span><div class="skill-bar"><div class="skill-fill" style="--w:92%"></div></div><span class="skill-pct">92%</span></div>
+                        <div class="skill-item" style="--i:3"><span class="skill-name">TypeScript</span><div class="skill-bar"><div class="skill-fill" style="--w:79%"></div></div><span class="skill-pct">79%</span></div>
+                        <div class="skill-item" style="--i:4"><span class="skill-name">PHP</span><div class="skill-bar"><div class="skill-fill" style="--w:87%"></div></div><span class="skill-pct">87%</span></div>
+                        <div class="skill-item" style="--i:5"><span class="skill-name">MySQL</span><div class="skill-bar"><div class="skill-fill" style="--w:82%"></div></div><span class="skill-pct">82%</span></div>
+                        <div class="skill-item" style="--i:6"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" style="--w:76%"></div></div><span class="skill-pct">76%</span></div>
+                    </div>
+                </div>
+
+                <!-- FRAMEWORKS -->
+                <div class="stack-category">
+                    <h3 class="stack-category-title">Frameworks</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" style="--i:7"><span class="skill-name">Next.js</span><div class="skill-bar"><div class="skill-fill" style="--w:84%"></div></div><span class="skill-pct">84%</span></div>
+                        <div class="skill-item" style="--i:8"><span class="skill-name">React</span><div class="skill-bar"><div class="skill-fill" style="--w:91%"></div></div><span class="skill-pct">91%</span></div>
+                        <div class="skill-item" style="--i:9"><span class="skill-name">Vue.js</span><div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div><span class="skill-pct">80%</span></div>
+                        <div class="skill-item" style="--i:10"><span class="skill-name">Laravel</span><div class="skill-bar"><div class="skill-fill" style="--w:86%"></div></div><span class="skill-pct">86%</span></div>
+                        <div class="skill-item" style="--i:11"><span class="skill-name">Tailwind</span><div class="skill-bar"><div class="skill-fill" style="--w:93%"></div></div><span class="skill-pct">93%</span></div>
+                        <div class="skill-item" style="--i:12"><span class="skill-name">Faker</span><div class="skill-bar"><div class="skill-fill" style="--w:77%"></div></div><span class="skill-pct">77%</span></div>
+                    </div>
+                </div>
+
+                <!-- OUTILS -->
+                <div class="stack-category">
+                    <h3 class="stack-category-title">Outils</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" style="--i:13"><span class="skill-name">Git/GitHub</span><div class="skill-bar"><div class="skill-fill" style="--w:89%"></div></div><span class="skill-pct">89%</span></div>
+                        <div class="skill-item" style="--i:14"><span class="skill-name">VSCode/PhpStorm</span><div class="skill-bar"><div class="skill-fill" style="--w:96%"></div></div><span class="skill-pct">96%</span></div>
+                        <div class="skill-item" style="--i:15"><span class="skill-name">Figma</span><div class="skill-bar"><div class="skill-fill" style="--w:81%"></div></div><span class="skill-pct">81%</span></div>
+                        <div class="skill-item" style="--i:16"><span class="skill-name">Docker</span><div class="skill-bar"><div class="skill-fill" style="--w:78%"></div></div><span class="skill-pct">78%</span></div>
+                        <div class="skill-item" style="--i:17"><span class="skill-name">LLM API</span><div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div><span class="skill-pct">75%</span></div>
+                        <div class="skill-item" style="--i:18"><span class="skill-name">Vercel</span><div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div><span class="skill-pct">90%</span></div>
+                        <div class="skill-item" style="--i:19"><span class="skill-name">PostgreSQL</span><div class="skill-bar"><div class="skill-fill" style="--w:83%"></div></div><span class="skill-pct">83%</span></div>
+                        <div class="skill-item" style="--i:20"><span class="skill-name">Supabase</span><div class="skill-bar"><div class="skill-fill" style="--w:77%"></div></div><span class="skill-pct">77%</span></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section section-dark" id="contact">
+        <section class="section section-dark" id="langues">
             <div class="container">
-                <div class="section-label">04 — Contact</div>
+                <div class="section-label">04 — Langues</div>
+                <h2 class="section-title">Maîtrise des langues</h2>
+                <div class="languages-grid">
+                    <div class="language-card">
+                        <div class="language-header">
+                            <h3 class="language-name">Français</h3>
+                            <span class="language-level language-level-native">Langue native</span>
+                        </div>
+                        <p class="language-desc">Maîtrise complète — Parlé, écrit et compris</p>
+                    </div>
+                    <div class="language-card">
+                        <div class="language-header">
+                            <h3 class="language-name">Anglais</h3>
+                            <span class="language-level language-level-c1">C1 Courant</span>
+                        </div>
+                        <p class="language-desc">Très bonne maîtrise — Capable de communiquer en contexte professionnel</p>
+                    </div>
+                    <div class="language-card">
+                        <div class="language-header">
+                            <h3 class="language-name">Espagnol</h3>
+                            <span class="language-level language-level-a2">A2 Bases</span>
+                        </div>
+                        <p class="language-desc">Notions élémentaires — En progression</p>
+                    </div>
+                    <div class="language-card">
+                        <div class="language-header">
+                            <h3 class="language-name">Japonais</h3>
+                            <span class="language-level language-level-learning">Autodidacte</span>
+                        </div>
+                        <p class="language-desc">En cours d'apprentissage personnel — Hiragana, Katakana et premières notions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="section-label">05 — Contact</div>
                 <h2 class="section-title">Travaillons ensemble</h2>
                 <div class="contact-layout">
                     <div class="contact-info">
@@ -192,6 +269,179 @@
             <p class="footer-copy">© 2024</p>
         </div>
     </footer>
+
+    <!-- MODALE YOASOBI -->
+    <div id="yoaModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="yoaModalClose">&times;</button>
+            <div class="modal-header">
+                <h2>Site J-Pop — YOASOBI</h2>
+                <span class="modal-tag">HTML · CSS · JavaScript</span>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3>Contexte du projet</h3>
+                    <p>Ce projet avait pour objectif de créer un site vitrine dynamique et attrayant dédié au groupe musical japonais YOASOBI. Le site présente les membres du groupe, leur histoire, discographie et offre une expérience utilisateur immersive avec des animations et des interactions fluides.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Solutions utilisées</h3>
+                    <ul class="solutions-list">
+                        <li><strong>HTML5</strong> — Structure sémantique et moderne du site</li>
+                        <li><strong>CSS3</strong> — Design responsive avec animations et effets visuels</li>
+                        <li><strong>JavaScript</strong> — Interactivité, navigation fluide et gestion des événements</li>
+                        <li><strong>Responsive Design</strong> — Compatible sur tous les appareils (mobile, tablette, desktop)</li>
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Captures d'écran</h3>
+                    <div class="modal-gallery">
+                        <figure class="gallery-item">
+                            <img class="gallery-img" src="cards/screen1YOA.png" alt="Capture d'écran 1 - Page d'accueil" loading="lazy">
+                            <figcaption>Page d'accueil et présentation</figcaption>
+                        </figure>
+                        <figure class="gallery-item">
+                            <img class="gallery-img" src="cards/screen2YOA.gif" alt="Capture d'écran 2 - Animation interactive" loading="lazy">
+                            <figcaption>Animations et interactions</figcaption>
+                        </figure>
+                        <figure class="gallery-item">
+                            <img class="gallery-img" src="cards/screen3YOA.png" alt="Capture d'écran 3 - Section membres" loading="lazy">
+                            <figcaption>Section membres du groupe</figcaption>
+                        </figure>
+                        <figure class="gallery-item">
+                            <img class="gallery-img" src="cards/Screen4YOA.png" alt="Capture d'écran 4 - Discographie" loading="lazy">
+                            <figcaption>Section connexion</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <a href="https://github.com/aaronZER69/Yoasobi" target="_blank" rel="noopener noreferrer" class="btn btn-source">
+                        <span>Code Source</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-1.02-2.44c3.33-.37 6.83-1.66 6.83-7.49 0-1.66-.6-3.08-1.58-4.17.15-.4.6-2.04-.15-4.21-1.3-.42-4.3 1.65-4.3 1.65-1.24-.35-2.56-.54-3.87-.54-1.31 0-2.63.19-3.87.54 0 0-3-2.07-4.3-1.65-.75 2.17-.3 3.81-.15 4.21-.98 1.09-1.58 2.51-1.58 4.17 0 5.84 3.5 7.12 6.83 7.49-.42.37-.8.89-.93 1.72-.84.37-2.96 1.03-4.27-1.23-1.3-2.27-3.67-2.4-3.67-2.4-2.34-.01-.16 1.47-.16 1.47 1.55.92 2.65 4.46 2.65 4.46 1.4 4.41 8.04 2.95 8.04 2.95v3.87"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALE GLPI -->
+    <div id="glpiModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="glpiModalClose">&times;</button>
+            <div class="modal-header">
+                <h2>Gestion de parc informatique — GLPI</h2>
+                <span class="modal-tag">GLPI · MySQL · Réseau</span>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3>Contexte du projet</h3>
+                    <p>Ce projet consistait à administrer et gérer un parc informatique d'entreprise via GLPI (Gestion Libre de Parc Informatique). L'objectif était de mettre en place une solution complète d'inventaire, de gestion des tickets d'assistance, et du suivi des équipements informatiques pour assurer une meilleure organisation et traçabilité.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Solutions utilisées</h3>
+                    <ul class="solutions-list">
+                        <li><strong>GLPI</strong> — Plateforme open-source de gestion de parc informatique</li>
+                        <li><strong>MySQL</strong> — Base de données pour la persistence des données</li>
+                        <li><strong>Réseau</strong> — Configuration et gestion du réseau informatique</li>
+                        <li><strong>Inventaire</strong> — Identification et suivi des équipements (PC, imprimantes, serveurs)</li>
+                        <li><strong>Ticketing</strong> — Système de tickets pour les demandes d'assistance</li>
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Captures d'écran</h3>
+                    <div class="modal-gallery">
+                        <figure class="gallery-item">
+                            <img class="gallery-img" src="cards/SCREENGLPI.png" alt="Capture d'écran GLPI - Dashboard" loading="lazy">
+                            <figcaption>Interface GLPI - Dashboard</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALE HUILES -->
+    <div id="oilModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="oilModalClose">&times;</button>
+            <div class="modal-header">
+                <h2>Site E-Commerce — Huiles</h2>
+                <span class="modal-tag">React · Tailwind · Node.js</span>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3>Contexte du projet</h3>
+                    <p>Ce projet consistait à créer une plateforme e-commerce complète dédiée à la vente d'huiles de qualité. L'objectif était de proposer une expérience d'achat fluide et professionnelle avec un catalogue riche, un système de panier, et une gestion de commandes pour offrir aux clients une solution d'achat en ligne moderne et sécurisée.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Solutions utilisées</h3>
+                    <ul class="solutions-list">
+                        <li><strong>React</strong> — Framework front-end pour une interface dynamique et réactive</li>
+                        <li><strong>Tailwind CSS</strong> — Styling moderne et responsive</li>
+                        <li><strong>Node.js</strong> — Backend pour la gestion des données et des commandes</li>
+                        <li><strong>Panier d'achat</strong> — Gestion du panier avec persistance en local storage</li>
+                        <li><strong>Système de paiement</strong> — Intégration pour les transactions sécurisées</li>
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Captures d'écran</h3>
+                    <div class="modal-gallery">
+                        <figure class="gallery-item">
+                            <img class="gallery-img" src="oil/oil1.png" alt="Capture d'écran 1 - Page d'accueil" loading="lazy">
+                            <figcaption>Page d'accueil</figcaption>
+                        </figure>
+                        <figure class="gallery-item">
+                            <img class="gallery-img" src="oil/oil2.png" alt="Capture d'écran 2 - Catalogue produits" loading="lazy">
+                            <figcaption>Catalogue produits</figcaption>
+                        </figure>
+                        <figure class="gallery-item">
+                            <img class="gallery-img" src="oil/oil3.png" alt="Capture d'écran 3 - Détail produit" loading="lazy">
+                            <figcaption>Détail produit</figcaption>
+                        </figure>
+                        <figure class="gallery-item">
+                            <img class="gallery-img" src="oil/oil4.png" alt="Capture d'écran 4 - Panier" loading="lazy">
+                            <figcaption>Panier d'achat</figcaption>
+                        </figure>
+                        <figure class="gallery-item">
+                            <img class="gallery-img" src="oil/oil5.png" alt="Capture d'écran 5 - Checkout" loading="lazy">
+                            <figcaption>Processus de checkout</figcaption>
+                        </figure>
+                        <figure class="gallery-item">
+                            <img class="gallery-img" src="oil/oil6.png" alt="Capture d'écran 6 - Confirmation" loading="lazy">
+                            <figcaption>Confirmation de commande</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <a href="https://github.com/aaronZER69/huiles" target="_blank" rel="noopener noreferrer" class="btn btn-source">
+                        <span>Code Source</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-1.02-2.44c3.33-.37 6.83-1.66 6.83-7.49 0-1.66-.6-3.08-1.58-4.17.15-.4.6-2.04-.15-4.21-1.3-.42-4.3 1.65-4.3 1.65-1.24-.35-2.56-.54-3.87-.54-1.31 0-2.63.19-3.87.54 0 0-3-2.07-4.3-1.65-.75 2.17-.3 3.81-.15 4.21-.98 1.09-1.58 2.51-1.58 4.17 0 5.84 3.5 7.12 6.83 7.49-.42.37-.8.89-.93 1.72-.84.37-2.96 1.03-4.27-1.23-1.3-2.27-3.67-2.4-3.67-2.4-2.34-.01-.16 1.47-.16 1.47 1.55.92 2.65 4.46 2.65 4.46 1.4 4.41 8.04 2.95 8.04 2.95v3.87"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX POUR IMAGES -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <img id="lightboxImg" src="" alt="Lightbox" class="lightbox-img" />
+        <p id="lightboxCaption" class="lightbox-caption"></p>
+    </div>
 
     <script src="index.js"></script>
 </body>

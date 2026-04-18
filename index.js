@@ -1,3 +1,88 @@
+// ---- STARFIELD ANIMATION ----
+function createStarfield() {
+    const starfield = document.getElementById('starfield');
+    const starCount = 100;
+    
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        
+        // Random position
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;
+        star.style.left = x + '%';
+        star.style.top = y + '%';
+        
+        // Random size (0.5px to 2px)
+        const size = Math.random() * 1.5 + 0.5;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        
+        // Random animation type and duration
+        const animationType = Math.random() > 0.4 ? 'twinkling' : 'floating';
+        const duration = Math.random() * 3 + 2; // 2-5 seconds
+        const floatDuration = Math.random() * 8 + 6; // 6-14 seconds
+        
+        star.classList.add(animationType);
+        star.style.setProperty('--duration', duration + 's');
+        star.style.setProperty('--float-duration', floatDuration + 's');
+        
+        // Random opacity
+        star.style.opacity = Math.random() * 0.7 + 0.3;
+        
+        starfield.appendChild(star);
+    }
+}
+
+// Initialize starfield on page load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', createStarfield);
+} else {
+    createStarfield();
+}
+
+// ---- CURSOR FOLLOWER ----
+const cursorDot = document.getElementById('cursorDot');
+const cursorFollower = document.getElementById('cursorFollower');
+
+let mouseX = 0;
+let mouseY = 0;
+let followerX = 0;
+let followerY = 0;
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    
+    // Dot follows instantly
+    cursorDot.style.left = mouseX - 4 + 'px';
+    cursorDot.style.top = mouseY - 4 + 'px';
+});
+
+// Smooth follower animation
+function animateFollower() {
+    followerX += (mouseX - followerX) * 0.15;
+    followerY += (mouseY - followerY) * 0.15;
+    
+    cursorFollower.style.left = followerX - 15 + 'px';
+    cursorFollower.style.top = followerY - 15 + 'px';
+    
+    requestAnimationFrame(animateFollower);
+}
+
+animateFollower();
+
+// Hide cursor on leave
+document.addEventListener('mouseleave', () => {
+    cursorDot.style.opacity = '0';
+    cursorFollower.style.opacity = '0';
+});
+
+document.addEventListener('mouseenter', () => {
+    cursorDot.style.opacity = '1';
+    cursorFollower.style.opacity = '0.5';
+});
+
 // ---- NAVBAR: scroll effect + mobile toggle ----
 const navbar = document.getElementById('navbar');
 const navToggle = document.getElementById('navToggle');
@@ -179,4 +264,106 @@ cards.forEach((el, i) => {
     el.style.transform = 'translateY(24px)';
     el.style.transition = `opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s`;
     cardObserver.observe(el);
+});
+
+// ---- MODAL: YOASOBI PROJECT ----
+const yoaProject = document.getElementById('yoaProject');
+const yoaModal = document.getElementById('yoaModal');
+const yoaModalClose = document.getElementById('yoaModalClose');
+
+yoaProject.addEventListener('click', () => {
+    yoaModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+yoaModalClose.addEventListener('click', () => {
+    yoaModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+});
+
+yoaModal.addEventListener('click', (e) => {
+    if (e.target === yoaModal) {
+        yoaModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// ---- MODAL: GLPI PROJECT ----
+const glpiProject = document.getElementById('glpiProject');
+const glpiModal = document.getElementById('glpiModal');
+const glpiModalClose = document.getElementById('glpiModalClose');
+
+glpiProject.addEventListener('click', () => {
+    glpiModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+glpiModalClose.addEventListener('click', () => {
+    glpiModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+});
+
+glpiModal.addEventListener('click', (e) => {
+    if (e.target === glpiModal) {
+        glpiModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// ---- MODAL: OIL PROJECT ----
+const oilProject = document.getElementById('oilProject');
+const oilModal = document.getElementById('oilModal');
+const oilModalClose = document.getElementById('oilModalClose');
+
+oilProject.addEventListener('click', () => {
+    oilModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+oilModalClose.addEventListener('click', () => {
+    oilModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+});
+
+oilModal.addEventListener('click', (e) => {
+    if (e.target === oilModal) {
+        oilModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// ---- LIGHTBOX: GALLERY IMAGES ----
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const lightboxClose = document.getElementById('lightboxClose');
+const galleryImages = document.querySelectorAll('.gallery-img');
+
+galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImg.src = img.src;
+        lightboxCaption.textContent = img.alt;
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+lightboxClose.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = 'auto';
+});
+
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
 });
