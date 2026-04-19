@@ -1,71 +1,101 @@
-// ---- STARFIELD ANIMATION ----
-function createStarfield() {
+// ---- BLOBS BACKGROUND ----
+function createBlobs() {
     const starfield = document.getElementById('starfield');
-    const starCount = 100;
     
-    for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        
-        // Random position
-        const x = Math.random() * 100;
-        const y = Math.random() * 100;
-        star.style.left = x + '%';
-        star.style.top = y + '%';
-        
-        // Random size (0.5px to 2px)
-        const size = Math.random() * 1.5 + 0.5;
-        star.style.width = size + 'px';
-        star.style.height = size + 'px';
-        
-        // Random animation type and duration
-        const animationType = Math.random() > 0.4 ? 'twinkling' : 'floating';
-        const duration = Math.random() * 3 + 2; // 2-5 seconds
-        const floatDuration = Math.random() * 8 + 6; // 6-14 seconds
-        
-        star.classList.add(animationType);
-        star.style.setProperty('--duration', duration + 's');
-        star.style.setProperty('--float-duration', floatDuration + 's');
-        
-        // Random opacity
-        star.style.opacity = Math.random() * 0.7 + 0.3;
-        
-        starfield.appendChild(star);
-    }
+    // Create 3 animated blobs
+    const blobData = [
+        { class: 'blob-1', left: '-50px', top: '-100px' },
+        { class: 'blob-2', left: '60%', top: '20%' },
+        { class: 'blob-3', left: '70%', top: '60%' }
+    ];
+    
+    blobData.forEach(data => {
+        const blob = document.createElement('div');
+        blob.className = `particle ${data.class}`;
+        blob.style.left = data.left;
+        blob.style.top = data.top;
+        starfield.appendChild(blob);
+    });
 }
 
-// Initialize starfield on page load
+// Initialize blobs on page load
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', createStarfield);
+    document.addEventListener('DOMContentLoaded', createBlobs);
 } else {
-    createStarfield();
+    createBlobs();
 }
 
-// ---- CURSOR FOLLOWER ----
+// ---- CURSOR FOLLOWER WITH TRAIL ----
 const cursorDot = document.getElementById('cursorDot');
 const cursorFollower = document.getElementById('cursorFollower');
+const cursorOrbital = document.getElementById('cursorOrbital');
+const body = document.body;
 
 let mouseX = 0;
 let mouseY = 0;
 let followerX = 0;
 let followerY = 0;
+let orbitalAngle = 0;
+const trailColors = ['#FF3300', '#FF5520', '#FF7740', '#FF9960'];
+let trailColorIndex = 0;
+let trailCounter = 0;
 
 document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
     
     // Dot follows instantly
-    cursorDot.style.left = mouseX - 4 + 'px';
-    cursorDot.style.top = mouseY - 4 + 'px';
+    cursorDot.style.left = (mouseX - 3) + 'px';
+    cursorDot.style.top = (mouseY - 3) + 'px';
+    
+    // Create trail effect
+    if (trailCounter++ % 2 === 0) {
+        const trail = document.createElement('div');
+        trail.className = 'cursor-trail';
+        const size = Math.random() * 4 + 2;
+        trail.style.width = size + 'px';
+        trail.style.height = size + 'px';
+        trail.style.left = (mouseX - size/2) + 'px';
+        trail.style.top = (mouseY - size/2) + 'px';
+        
+        const inner = document.createElement('div');
+        inner.className = 'cursor-trail-inner';
+        inner.style.background = trailColors[trailColorIndex];
+        trail.appendChild(inner);
+        
+        body.appendChild(trail);
+        
+        trailColorIndex = (trailColorIndex + 1) % trailColors.length;
+        
+        // Fade and remove trail
+        let opacity = 1;
+        const fadeInterval = setInterval(() => {
+            opacity -= 0.1;
+            trail.style.opacity = opacity;
+            if (opacity <= 0) {
+                clearInterval(fadeInterval);
+                trail.remove();
+            }
+        }, 30);
+    }
 });
 
 // Smooth follower animation
 function animateFollower() {
-    followerX += (mouseX - followerX) * 0.15;
-    followerY += (mouseY - followerY) * 0.15;
+    followerX += (mouseX - followerX) * 0.12;
+    followerY += (mouseY - followerY) * 0.12;
     
-    cursorFollower.style.left = followerX - 15 + 'px';
-    cursorFollower.style.top = followerY - 15 + 'px';
+    cursorFollower.style.left = (followerX - 16) + 'px';
+    cursorFollower.style.top = (followerY - 16) + 'px';
+    
+    // Orbital ball animation
+    orbitalAngle += 0.04; // Speed of rotation (reduced for slower movement)
+    const orbitalRadius = 15; // Distance from cursor (reduced for closer orbit)
+    const orbitalX = mouseX + Math.cos(orbitalAngle) * orbitalRadius;
+    const orbitalY = mouseY + Math.sin(orbitalAngle) * orbitalRadius;
+    
+    cursorOrbital.style.left = (orbitalX - 4) + 'px';
+    cursorOrbital.style.top = (orbitalY - 4) + 'px';
     
     requestAnimationFrame(animateFollower);
 }
@@ -76,11 +106,13 @@ animateFollower();
 document.addEventListener('mouseleave', () => {
     cursorDot.style.opacity = '0';
     cursorFollower.style.opacity = '0';
+    cursorOrbital.style.opacity = '0';
 });
 
 document.addEventListener('mouseenter', () => {
     cursorDot.style.opacity = '1';
-    cursorFollower.style.opacity = '0.5';
+    cursorFollower.style.opacity = '0.4';
+    cursorOrbital.style.opacity = '0.8';
 });
 
 // ---- NAVBAR: scroll effect + mobile toggle ----
