@@ -354,6 +354,50 @@ confModal.addEventListener('click', (e) => {
     }
 });
 
+// ---- MODAL: BIBLIOTECH PROJECT ----
+const biblioProject = document.getElementById('biblioProject');
+const biblioModal = document.getElementById('biblioModal');
+const biblioModalClose = document.getElementById('biblioModalClose');
+
+biblioProject.addEventListener('click', () => {
+    biblioModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+biblioModalClose.addEventListener('click', () => {
+    biblioModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+});
+
+biblioModal.addEventListener('click', (e) => {
+    if (e.target === biblioModal) {
+        biblioModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// ---- MODAL: BOUTIKPRO PROJECT ----
+const boutikProject = document.getElementById('boutikProject');
+const boutikModal = document.getElementById('boutikModal');
+const boutikModalClose = document.getElementById('boutikModalClose');
+
+boutikProject.addEventListener('click', () => {
+    boutikModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+boutikModalClose.addEventListener('click', () => {
+    boutikModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+});
+
+boutikModal.addEventListener('click', (e) => {
+    if (e.target === boutikModal) {
+        boutikModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
 // ---- LIGHTBOX: GALLERY IMAGES ----
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
