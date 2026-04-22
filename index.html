@@ -20,16 +20,20 @@
     <nav class="navbar" id="navbar">
         <div class="nav-inner">
             <a href="#home" class="nav-logo">AZ<span>.</span></a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about" class="nav-link">À propos</a></li>
-                <li><a href="#projets" class="nav-link">Projets</a></li>
-                <li><a href="#education" class="nav-link">Éducation</a></li>
-                <li><a href="#skills" class="nav-link">Compétences</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
+            <div class="dropdown">
+                <button class="dropdown-btn" id="dropdownBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="#about" class="dropdown-link">À propos</a>
+                    <a href="#projets" class="dropdown-link">Projets</a>
+                    <a href="#education" class="dropdown-link">Éducation</a>
+                    <a href="#skills" class="dropdown-link">Compétences</a>
+                    <a href="#contact" class="dropdown-link">Contact</a>
+                </div>
+            </div>
         </div>
     </nav>
 

@@ -115,25 +115,23 @@ document.addEventListener('mouseenter', () => {
     cursorOrbital.style.opacity = '0.8';
 });
 
-// ---- NAVBAR: scroll effect + mobile toggle ----
+// ---- NAVBAR: scroll effect + dropdown toggle ----
 const navbar = document.getElementById('navbar');
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
+const dropdownBtn = document.getElementById('dropdownBtn');
+const dropdownContent = document.getElementById('dropdownContent');
 
 window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 30);
 });
 
-navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    navToggle.classList.toggle('active');
+dropdownBtn.addEventListener('click', () => {
+    dropdownContent.classList.toggle('open');
 });
 
-// Close mobile menu on link click
-document.querySelectorAll('.nav-link').forEach(link => {
+// Close dropdown on link click
+document.querySelectorAll('.dropdown-link').forEach(link => {
     link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        navToggle.classList.remove('active');
+        dropdownContent.classList.remove('open');
     });
 });
 
@@ -142,8 +140,8 @@ const sections = document.querySelectorAll('section[id]');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-            const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+            document.querySelectorAll('.dropdown-link').forEach(l => l.classList.remove('active'));
+            const active = document.querySelector(`.dropdown-link[href="#${entry.target.id}"]`);
             if (active) active.classList.add('active');
         }
     });
